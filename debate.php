@@ -21,10 +21,13 @@
  * @copyright   2021 Safat Shahin <safatshahin@yahoo.com>
  * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+global $CFG;
 
 require(__DIR__ . '/../../config.php');
 require_once(__DIR__ . '/lib.php');
-//require_once(__DIR__ . '/../../lib/outputcomponents.php');
+if ((int)$CFG->branch < 405) {
+    require_once(__DIR__ . '/../../lib/outputcomponents.php');
+}
 global $DB, $OUTPUT, $PAGE, $USER;
 use mod_debate\debate_constants;
 
